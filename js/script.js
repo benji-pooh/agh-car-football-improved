@@ -33,14 +33,14 @@ vehicle = [undefined, undefined];
 input = [undefined, undefined];
 
 config = {
-  power: 1500,
-  suspension_stiffness: 50,
-  suspension_compression: 0.083,
-  suspension_damping: 100.05,
-  max_suspension_travel: 50000,
-  fraction_slip: 10.5,
+  power: 1000,
+  suspension_stiffness: 80,
+  suspension_compression: 0.019,
+  suspension_damping: 1050,
+  max_suspension_travel: 55550,
+  fraction_slip: 10,
   max_suspension_force: 6000,
-  jump_force: 3000,
+  jump_force: 8000,
   camera_on_first: false,
   debug: window.location.search.substr(1) === 'debug'
 };
@@ -113,8 +113,8 @@ let jumpVehicle = function (number) {
 };
 
 let setVehicle = function (car, number) {
-  var load_car = car.load_car.clone().translate(0, -0.9, 0);
-  load_car.scale(1.4, 1.4, 1.4);
+  var load_car = car.load_car.clone().translate(0, -1, 0);
+  load_car.scale(1.6, 1.6, 1.6);
 
   if (vehicle[number]) {
     scene.remove(vehicle[number]);
