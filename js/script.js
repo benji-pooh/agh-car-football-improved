@@ -33,14 +33,14 @@ vehicle = [undefined, undefined];
 input = [undefined, undefined];
 
 config = {
-  power: 3000,
+  power: 960,
   suspension_stiffness: 5500,
   suspension_compression: 0.019,
   suspension_damping: 6500,
-  max_suspension_travel: 85550,
+  max_suspension_travel: 8555,
   fraction_slip: 20,
   max_suspension_force: 25000,
-  jump_force: 1000,
+  jump_force: 90,
   camera_on_first: false,
   debug: window.location.search.substr(1) === 'debug'
 };
@@ -615,9 +615,11 @@ initScene = function () {
     const gui = new dat.GUI();
     const folder = gui.addFolder('General');
     folder.open();
-    folder.add(config, 'power', 1, 30000);
-    folder.add(config, 'jump_force', 2, 20000000);
+    folder.add(config, 'power', 1, 50000);
+    folder.add(config, 'jump_force', 2, 3500000);
     folder.add(config, 'camera_on_first');
+    folder.add(config, 'suspension_stiffness', 15, 250000);
+    folder.add(config, 'suspension_compression', 1, 500000);
   }
 
 
