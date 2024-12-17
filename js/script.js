@@ -33,14 +33,14 @@ vehicle = [undefined, undefined];
 input = [undefined, undefined];
 
 config = {
-  power: 30000,
-  suspension_stiffness: 300,
+  power: 3000,
+  suspension_stiffness: 5500,
   suspension_compression: 0.019,
-  suspension_damping: 1050,
-  max_suspension_travel: 55550,
-  fraction_slip: 10,
-  max_suspension_force: 6000,
-  jump_force: 8000,
+  suspension_damping: 6500,
+  max_suspension_travel: 85550,
+  fraction_slip: 20,
+  max_suspension_force: 25000,
+  jump_force: 10000,
   camera_on_first: false,
   debug: window.location.search.substr(1) === 'debug'
 };
@@ -248,16 +248,16 @@ initScene = function () {
   light.shadowCameraRight = 100;
   light.shadowCameraBottom = 100;
   light.shadowCameraNear = 20;
-  light.shadowCameraFar = 500;
-  light.shadowBias = -0.0001;
+  light.shadowCameraFar = 400;
+  light.shadowBias = -0.1;
   light.shadowMapWidth = light.shadowMapHeight = 4096;
-  light.shadowDarkness = 0.95;
+  light.shadowDarkness = 1.95;
   scene.add(light);
 
   ball = new Physijs.SphereMesh(
     new THREE.SphereGeometry(3, 24, 24),
-    Physijs.createMaterial(new THREE.MeshPhongMaterial({ color: 0xffffff , shininess: 10000}, 1, 3)),
-    0.5
+    Physijs.createMaterial(new THREE.MeshPhongMaterial({ color: 0xffffff , shininess: 10000}, 2, 6)),
+    0.4
   );
 
   ball.position.set(0, 35, 0);
@@ -267,11 +267,11 @@ initScene = function () {
 
   scene.add(ball);
 
-  goal1 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 0.2), new THREE.MeshPhongMaterial(), 0);
+  goal1 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 0.4), new THREE.MeshPhongMaterial(), 0);
   goal1.position.set(-2, 0, -52);
 
 
-  goal2 = new THREE.Mesh(new THREE.BoxGeometry(30, 10, 0.2), new THREE.MeshPhongMaterial(), 0);
+  goal2 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 0.4), new THREE.MeshPhongMaterial(), 0);
   goal2.position.set(-2, 0, 52);
 
   // Loader
@@ -442,13 +442,13 @@ initScene = function () {
           {
             power: null,
             direction: null,
-            steering: 0,
+            steering: 90,
             forward: true,
           },
           {
             power: null,
             direction: null,
-            steering: 0,
+            steering: 90,
             forward: true,
           },
         ];
