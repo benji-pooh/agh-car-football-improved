@@ -1,86 +1,84 @@
 # WebGL Car Football Game
 
-## Opis projektu
+## Project description
 
-W ramach projektu zrealizowaliśmy w technologii WebGL dwuosobową grę przeglądarkową, w której gracze, sterując zabawkowymi samochodami, próbują trafić piłką do bramki przeciwnika.
+As part of the project, we created a two-player browser game in WebGL technology, in which players, controlling toy cars, try to hit the ball into the opponent's goal.
 
-Inspiracją dla projektu była gra Rocket League, która, choć znacznie bardziej zaawansowana, opiera się na podobnej koncepcji rozgrywki.
+The inspiration for the project was the game Rocket League, which, although much more advanced, is based on a similar gameplay concept.
 
-Gracze mają możliwość pełnego sterowania samochodem za pomocą klawiatury lub kontrolera do gier (testowany na DualShock 3).
+Players have the ability to fully control the car using a keyboard or a game controller (tested on DualShock 3).
 
-Aby gra była ciekawsza, samochody mają możliwości podskoku, a gracze mogą ustawić pojazdy z powrotem na kółkach, jeżeli samochód się przewróci. Pełna instrukcja sterowania znajduje się w lewym dolnym rogu ekranu.
+To make the game more interesting, cars have the ability to jump, and players can put the vehicles back on their wheels if the car falls over. Full control instructions are located in the lower left corner of the screen.
 
-Po trafieniu piłką do bramki przeciwnika, stan punktowy meczu ulega zmianie, a punkty są wyświetlane na tablicy wyników w górnej części strony.
+After hitting the ball into the opponent's goal, the match score changes and the points are displayed on the scoreboard at the top of the page.
 
-## Link do strony z projektem
+## Link to the project page
 
-[Strona z grą](https://def-au1t.github.io/car-football/)
+[Game page](https://def-au1t.github.io/car-football/)
 
-## Opis techniczny
+## Technical description
 
-Kod skryptu odpowiedzialnego za generowanie planszy znajduje się w pliku `js/script.js`.
+The script code responsible for generating the board is in the `js/script.js` file.
 
-### Obiekty 3D
+### 3D objects
 
-W projekcie użyliśmy modeli w formacie `.json` ładowanych przez bibliotekę three.js. Zostały one wygenerowane przy pomocy programu Blender i wyeksportowane w taki, sposób, aby możliwy był ich poprawny odczyt z pliku tekstowego.
+In the project, we used models in the `.json` format loaded by the three.js library. They were generated using Blender and exported in such a way that they could be correctly read from a text file.
 
-Z racji ograniczonych możliwości sprzętowych, skorzystaliśmy z trójwymiarowych modeli low-poly drzew, aby rozgrywka była możliwie płynna. Elementy stanowiące granicę boiska zostały przez nas stworzone ręcznie w Blenderze.
+Due to limited hardware capabilities, we used three-dimensional low-poly models of trees to make the gameplay as smooth as possible. The elements constituting the boundaries of the pitch were created by us manually in Blender.
 
-Uznaliśmy, że dodanie tekstury papieru na podłoże sprawi, że w połączeniu z zaimportowanymi modelami zabawkowych samochodów, gra będzie miała - popularny obecnie - rysunkowy charakter.
+We decided that adding a paper texture to the ground would make the game - in combination with imported toy car models - have a currently popular cartoon character.
 
-### Kamera
+### Camera
 
-Zastosowaliśmy kamerę perspektywiczną (`PerspectiveCamera`), która podąża za punktem pomiędzy dwoma graczami, a jej odległość zmienia się w taki sposób, żeby pokazać obu graczy.
+We used a perspective camera (`PerspectiveCamera`) that follows a point between two players, and its distance changes in such a way as to show both players.
 
+### Light
 
-### Światło
+Two light sources were used in the program:
 
-W programie zostały użyte dwa źródła światła:
+- `HemisphereLight` - responsible for the overall brightness of the entire scene
+- `DirectionalLight` - adds shadows and stronger lighting from the "sun" side
 
-- `HemisphereLight` - odpowiada za ogólną jasność całej sceny
-- `DirectionalLight` - dodaje cienie i mocniejsze oświetlenie od strony "słońca"
+### Physics
 
-### Fizyka
+Physical elements are calculated in two ways:
+- `ConvexMesh` - cars - this is quite computationally intensive
+- `BoxMesh/SphereMesh` - lower (but sufficient) accuracy of the ball and board boundaries
 
-Elementy fizycznie są obliczane na dwa sposoby:
-- `ConvexMesh` - samochody - jest to dość obciążające obliczeniowo
-- `BoxMesh/SphereMesh` - mniejsza (lecz wystarczająca) dokładność piłki i ograniczników planszy
+### Technologies and libraries used
 
-### Użyte technologie i biblioteki
+- Three.js & Physi.js libraries
+- Models exported using Blender
+- GameController library to support controller control via the browser Gamepad API.
+- Tree models: https://blendswap.com/blend/19242
+- Car models: https://free3d.com/3d-model/low-poly-car--49763.html
+- Bumper models created independently in Blender
 
-- Biblioteki Three.js & Physi.js
-- Modele wyeksportowane za pomocą programu Blender
-- Biblioteka GameController do obsługi sterowania kontrolerem przez przeglądarkowe Gamepad API.
-- Modele drzew: https://blendswap.com/blend/19242
-- Modele samochodów: https://free3d.com/3d-model/low-poly-car--49763.html
-- Modele zderzaków stworzone samodzielnie w programie Blender
+### Debug mode
 
+After opening the page with the `?debug` parameter in the address, there are statistics of the display of frames per second, and a panel with physics settings, which can be changed during the game.
 
-### Tryb debugowania
+[Game page - debug mode (with parameters and FPS counter)](https://def-au1t.github.io/car-football/?debug)
 
-Po otwarciu strony z parametrem `?debug` w adresie dostępne są statystyki wyświetlania klatek na sekundę, oraz panel z ustawieniami fizyki, które można zmieniać w czasie gry.
+## Game controls
 
-[Strona z grą - tryb debugowania (z parametrami i licznikiem FPS)](https://def-au1t.github.io/car-football/?debug)
-
-## Sterowanie w grze
-
-Gracz 1 może użyć pada zamiast klawiatury. Przedstawiono obrazki klawiszy odpowiednie dla padów DualShock (PlayStation).
+Player 1 can use a pad instead of a keyboard. The images of the keys corresponding to the DualShock (PlayStation) pads are shown.
 
 ![](docs/controls.png)
 
-## Zrzuty ekranu
+## Screenshots
 
-### Ekran rozgrywki
+### Gameplay screen
 ![](docs/img1.png)
 
-### Zdobycie punktu sygnalizowane zmianą koloru belki
+### Conquering a point is signaled by a change in the color of the beam
 
 ![](docs/img2.png)
 
-## Film z rozgrywki
-[Nagranie z rozgrywki](https://aghedupl-my.sharepoint.com/:v:/g/personal/jaceknit_student_agh_edu_pl/EZ0lBYfSDKlPitFgiweSHDgBmz_ZQxFiYwwNoG-dRcNzVw?e=l1YkIb)
+## Gameplay video
+[Gameplay recording](https://aghedupl-my.sharepoint.com/:v:/g/personal/jaceknit_student_agh_edu_pl/EZ0lBYfSDKlPitFgiweSHDgBmz_ZQxFiYwwNoG-dRcNzVw?e=l1YkIb)
 
-## Autorzy:
+## Authors:
 
 - Karol Musur
 - Jacek Nitychoruk
