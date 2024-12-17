@@ -33,8 +33,8 @@ vehicle = [undefined, undefined];
 input = [undefined, undefined];
 
 config = {
-  power: 1000,
-  suspension_stiffness: 80,
+  power: 30000,
+  suspension_stiffness: 300,
   suspension_compression: 0.019,
   suspension_damping: 1050,
   max_suspension_travel: 55550,
@@ -229,7 +229,7 @@ initScene = function () {
   });
 
   camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.01, 2000);
-  camera.position.copy(new THREE.Vector3(40, 90, 40));
+  camera.position.copy(new THREE.Vector3(45, 95, 40));
   camera.lookAt(new THREE.Vector3(0, 0, 0));
   scene.add(camera);
 
@@ -243,35 +243,35 @@ initScene = function () {
   light.position.set(200, 200, -150);
   light.target.position.copy(scene.position);
   light.castShadow = true;
-  light.shadowCameraLeft = -100;
-  light.shadowCameraTop = -100;
+  light.shadowCameraLeft = -150;
+  light.shadowCameraTop = -85;
   light.shadowCameraRight = 100;
   light.shadowCameraBottom = 100;
   light.shadowCameraNear = 20;
   light.shadowCameraFar = 500;
   light.shadowBias = -0.0001;
   light.shadowMapWidth = light.shadowMapHeight = 4096;
-  light.shadowDarkness = 0.7;
+  light.shadowDarkness = 0.95;
   scene.add(light);
 
   ball = new Physijs.SphereMesh(
     new THREE.SphereGeometry(3, 24, 24),
-    Physijs.createMaterial(new THREE.MeshPhongMaterial({ color: 0xffffff , shininess: 1000}, 1, 3)),
+    Physijs.createMaterial(new THREE.MeshPhongMaterial({ color: 0xffffff , shininess: 10000}, 1, 3)),
     0.5
   );
 
-  ball.position.set(0, 30, 0);
+  ball.position.set(0, 35, 0);
   ball.castShadow = true;
   ball.receiveShadow = true;
   ball.__dirtyPosition = true;
 
   scene.add(ball);
 
-  goal1 = new THREE.Mesh(new THREE.BoxGeometry(15, 20, 0.2), new THREE.MeshPhongMaterial(), 0);
+  goal1 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 0.2), new THREE.MeshPhongMaterial(), 0);
   goal1.position.set(-2, 0, -52);
 
 
-  goal2 = new THREE.Mesh(new THREE.BoxGeometry(15, 10, 0.2), new THREE.MeshPhongMaterial(), 0);
+  goal2 = new THREE.Mesh(new THREE.BoxGeometry(30, 10, 0.2), new THREE.MeshPhongMaterial(), 0);
   goal2.position.set(-2, 0, 52);
 
   // Loader
@@ -282,11 +282,11 @@ initScene = function () {
     new THREE.MeshLambertMaterial({
       map: loader.load('images/background.png'),
     }),
-    0.8,
+    0.85,
     1
   );
   ground_material.map.wrapS = ground_material.map.wrapT = THREE.RepeatWrapping;
-  ground_material.map.repeat.set(3, 3);
+  ground_material.map.repeat.set(3.5, 3.5);
 
 
   // Ground
