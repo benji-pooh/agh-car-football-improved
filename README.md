@@ -13,6 +13,9 @@ To make the game more interesting, cars have the ability to jump, and players ca
 After hitting the ball into the opponent's goal, the match score changes and the points are displayed on the scoreboard at the top of the page.
 
 ## Link to the project page
+
+-improvements are coming guys
+-i kinda suck at github so hopefully i dont ruin it
 benji-pooh.github.io/carballs/
 ## Technical description
 
