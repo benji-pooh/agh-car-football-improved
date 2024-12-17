@@ -40,7 +40,7 @@ config = {
   max_suspension_travel: 85550,
   fraction_slip: 20,
   max_suspension_force: 25000,
-  jump_force: 10000,
+  jump_force: 1000,
   camera_on_first: false,
   debug: window.location.search.substr(1) === 'debug'
 };
