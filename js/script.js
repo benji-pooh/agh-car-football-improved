@@ -4,7 +4,7 @@ Physijs.scripts.worker = 'vendor/physijs_worker.js';
 Physijs.scripts.ammo = 'ammo.js';
 
 const json_loader = new THREE.JSONLoader();
-
+//initialize
 var initScene,
   render,
   ground_material,
@@ -90,7 +90,7 @@ let resetVehicle = function (number, initialPosition) {
 
 let jumpVehicle = function (number) {
   var vehicle_to_jump = vehicle[number];
-  var force = 0.0;
+  var force = 2.0;
   for (var i = 0; i < vehicle_to_jump.wheels.length; i++) {
     var local = new THREE.Vector3(
       vehicle_to_jump.wheels[0].matrix.elements[12],
@@ -202,8 +202,8 @@ initScene = function () {
 
           if (input[i].direction !== null) {
             input[i].steering += input[i].direction / 15;
-            if (input[i].steering < -0.6) input[i].steering = -0.6;
-            if (input[i].steering > 0.6) input[i].steering = 0.6;
+            if (input[i].steering < -0.8) input[i].steering = -0.8;
+            if (input[i].steering > 0.8) input[i].steering = 0.8;
           } else {
             input[i].steering *= 0.9;
           }
@@ -214,7 +214,7 @@ initScene = function () {
           if (input[i].power === true && input[i].forward === true) {
             vehicle[i].applyEngineForce(config.power / (1 + Math.max(0.0, directionalSpeed) * 0.1));
           } else if (input[i].power === true && input[i].forward === false) {
-            vehicle[i].applyEngineForce(-config.power * 0.6);
+            vehicle[i].applyEngineForce(-config.power * 0.95);
           } else {
             vehicle[i].applyEngineForce(0);
           }
@@ -615,8 +615,8 @@ initScene = function () {
     const gui = new dat.GUI();
     const folder = gui.addFolder('General');
     folder.open();
-    folder.add(config, 'power', 0, 30000);
-    folder.add(config, 'jump_force', 1, 100000);
+    folder.add(config, 'power', 1, 30000);
+    folder.add(config, 'jump_force', 2, 20000000);
     folder.add(config, 'camera_on_first');
   }
 
@@ -648,7 +648,7 @@ render = function () {
     document.getElementById('heading').style.backgroundColor = '#00EA2D';
     setTimeout(function () {
       resetGame(0, 1);
-    }, 1500);
+    }, 3000);
   }
 
   if (ball.position.z > goal2.position.z && !resetting) {
@@ -656,7 +656,7 @@ render = function () {
     document.getElementById('heading').style.backgroundColor = '#6863D7';
     setTimeout(function () {
       resetGame(1, 0);
-    }, 1500);
+    }, 3000);
   }
 
   renderer.render(scene, camera);
