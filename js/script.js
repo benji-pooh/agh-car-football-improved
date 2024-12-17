@@ -280,7 +280,7 @@ initScene = function () {
   // Materials
   ground_material = Physijs.createMaterial(
     new THREE.MeshLambertMaterial({
-      map: loader.load('images/paper.jpg'),
+      map: loader.load('images/background.png'),
     }),
     0.8,
     1
