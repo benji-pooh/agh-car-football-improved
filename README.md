@@ -1,10 +1,10 @@
-# WebGL Car Football Game
+# WebGL Car Soccer Game
 
 ## Project description
 
-As part of the project, we created a two-player browser game in WebGL technology, in which players, controlling toy cars, try to hit the ball into the opponent's goal.
+We have made a game where players can control cars to throw a ball into the goal.
 
-The inspiration for the project was the game Rocket League, which, although much more advanced, is based on a similar gameplay concept.
+The inspiration for the project was the game Rocket League, which, although much more advanced, is based on a very similar gameplay concept.
 
 Players have the ability to fully control the car using a keyboard or a game controller (tested on DualShock 3).
 
@@ -13,9 +13,7 @@ To make the game more interesting, cars have the ability to jump, and players ca
 After hitting the ball into the opponent's goal, the match score changes and the points are displayed on the scoreboard at the top of the page.
 
 ## Link to the project page
-
-[Game page](https://def-au1t.github.io/car-football/)
-
+benji-pooh.github.io/carballs/
 ## Technical description
 
 The script code responsible for generating the board is in the `js/script.js` file.
@@ -26,7 +24,7 @@ In the project, we used models in the `.json` format loaded by the three.js libr
 
 Due to limited hardware capabilities, we used three-dimensional low-poly models of trees to make the gameplay as smooth as possible. The elements constituting the boundaries of the pitch were created by us manually in Blender.
 
-We decided that adding a paper texture to the ground would make the game - in combination with imported toy car models - have a currently popular cartoon character.
+I had deleted the original paper texture, since it did not look cool enough(in my opinion).
 
 ### Camera
 
@@ -58,7 +56,7 @@ Physical elements are calculated in two ways:
 
 After opening the page with the `?debug` parameter in the address, there are statistics of the display of frames per second, and a panel with physics settings, which can be changed during the game.
 
-[Game page - debug mode (with parameters and FPS counter)](https://def-au1t.github.io/car-football/?debug)
+[Game page - debug mode (with parameters and FPS counter)](https://benji-pooh.github.io/carballs/?debug)
 
 ## Game controls
 
@@ -75,10 +73,8 @@ Player 1 can use a pad instead of a keyboard. The images of the keys correspondi
 
 ![](docs/img2.png)
 
-## Gameplay video
-[Gameplay recording](https://aghedupl-my.sharepoint.com/:v:/g/personal/jaceknit_student_agh_edu_pl/EZ0lBYfSDKlPitFgiweSHDgBmz_ZQxFiYwwNoG-dRcNzVw?e=l1YkIb)
-
-## Authors:
+## Thanks to the original developers:
 
 - Karol Musur
 - Jacek Nitychoruk
+- Unofficial fork by ben(@benpolb/benji-pooh)
