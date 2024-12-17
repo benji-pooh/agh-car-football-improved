@@ -33,14 +33,14 @@ vehicle = [undefined, undefined];
 input = [undefined, undefined];
 
 config = {
-  power: 960,
-  suspension_stiffness: 5500,
-  suspension_compression: 0.019,
-  suspension_damping: 6500,
-  max_suspension_travel: 8555,
-  fraction_slip: 20,
-  max_suspension_force: 25000,
-  jump_force: 90,
+  power: 1500,
+  suspension_stiffness: 50,
+  suspension_compression: 0.083,
+  suspension_damping: 100.05,
+  max_suspension_travel: 50000,
+  fraction_slip: 10.5,
+  max_suspension_force: 6000,
+  jump_force: 3000,
   camera_on_first: false,
   debug: window.location.search.substr(1) === 'debug'
 };
