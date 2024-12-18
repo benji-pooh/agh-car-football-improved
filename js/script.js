@@ -619,9 +619,11 @@ initScene = function () {
     folder.add(config, 'jump_force', 2, 3500000);
     folder.add(config, 'camera_on_first');
     folder.add(config, 'suspension_stiffness', 15, 250000);
-    folder.add(config, 'suspension_compression', 1, 500000);
+    folder.add(config, 'suspension_damping', 1, 75000);
+    folder.add(config, 'max_suspension_travel', 1, 80000);
+    folder.add(config, 'fraction_slip', 1, 2500);
+    folder.add(config, 'max_suspension_force', 1, 85000);
   }
-
 
   requestAnimationFrame(render);
   scene.simulate();
