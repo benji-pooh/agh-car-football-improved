@@ -21,6 +21,9 @@ After hitting the ball into the opponent's goal, the match score changes and the
 
 -Add ambient occlusion.
 
+-Figure out how to make the cars not dissapear less than a second after loading.
+
+
 -Add reflections, depth of field, and make it look more like [this](https://danielom83.github.io/R3F-Car-Racing/).
 ## Technical description
 
