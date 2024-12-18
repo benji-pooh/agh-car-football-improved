@@ -12,16 +12,19 @@ To make the game more interesting, cars have the ability to jump, and players ca
 
 After hitting the ball into the opponent's goal, the match score changes and the points are displayed on the scoreboard at the top of the page.
 
-## Link to the project page
+## TODO
+-Fix the absolute dogshit performance and make the game not look like plastic.
 
--improvements are coming guys
+-Make moar textures.
 
--i kinda suck at github so hopefully i dont ruin it
+-Add noises.
 
-[benji-pooh.github.io/carballs/](benji-pooh.github.io/carballs/)
+-Add ambient occlusion.
+
+-Add reflections, depth of field, and make it look more like [this](https://danielom83.github.io/R3F-Car-Racing/).
 ## Technical description
 
-The script code responsible for generating the board is in the `js/script.js` file.
+The script code responsible for generating the board and most of the visuals is in the `js/script.js` file.
 
 ### 3D objects
 
