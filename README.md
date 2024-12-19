@@ -13,7 +13,7 @@ After hitting the ball into the opponent's goal, the match score changes and the
 ## Link to the project page
 
 [benji-pooh.github.io/carballs/](benji-pooh.github.io/carballs/)
-## Technical descriptionS
+## Technical description
 
 The script code responsible for generating the visuals, main page, and more is in the `js/script.js` file.
 
