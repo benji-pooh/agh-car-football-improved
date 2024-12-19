@@ -244,12 +244,12 @@ initScene = function () {
   light.target.position.copy(scene.position);
   light.castShadow = true;
   light.shadowCameraLeft = -150;
-  light.shadowCameraTop = -85;
+  light.shadowCameraTop = 0;
   light.shadowCameraRight = 100;
-  light.shadowCameraBottom = 100;
+  light.shadowCameraBottom = 35;
   light.shadowCameraNear = 20;
   light.shadowCameraFar = 400;
-  light.shadowBias = -0.1;
+  light.shadowBias = -0.5;
   light.shadowMapWidth = light.shadowMapHeight = 4096;
   light.shadowDarkness = 1.95;
   scene.add(light);
