@@ -1,10 +1,8 @@
 # WebGL Car Soccer Game
 
-## Project description
+We thought it would be cool to be able to have a multiplayer rocket leauge-like game that you can play at school. So, we made that happen. 
 
-We have made a game where players can control cars to throw a ball into the goal.
-
-The inspiration for the project was the game Rocket League, which, although much more advanced, is based on a very similar gameplay concept.
+This game is **heavily** inspired by *rocket leauge*. Although rocket leauge itself is much more complex, this game is based on a very similar gameplay style.
 
 Players have the ability to fully control the car using a keyboard or a game controller (tested on DualShock 3).
 
@@ -12,30 +10,18 @@ To make the game more interesting, cars have the ability to jump, and players ca
 
 After hitting the ball into the opponent's goal, the match score changes and the points are displayed on the scoreboard at the top of the page.
 
-## TODO
--Fix the absolute dogshit performance and make the game not look like plastic.
+## Link to the project page
 
--Make moar textures.
+[benji-pooh.github.io/carballs/](benji-pooh.github.io/carballs/)
+## Technical descriptionS
 
--Add noises.
-
--Add ambient occlusion.
-
--Figure out how to make the cars not dissapear less than a second after loading.
-
-
--Add reflections, depth of field, and make it look more like [this](https://danielom83.github.io/R3F-Car-Racing/).
-## Technical description
-
-The script code responsible for generating the board and most of the visuals is in the `js/script.js` file.
+The script code responsible for generating the visuals, main page, and more is in the `js/script.js` file.
 
 ### 3D objects
 
 In the project, we used models in the `.json` format loaded by the three.js library. They were generated using Blender and exported in such a way that they could be correctly read from a text file.
 
-Due to limited hardware capabilities, we used three-dimensional low-poly models of trees to make the gameplay as smooth as possible. The elements constituting the boundaries of the pitch were created by us manually in Blender.
-
-I had deleted the original paper texture, since it did not look cool enough(in my opinion).
+Due to limited hardware capabilities, we used three-dimensional low-poly models of trees to make the gameplay as smooth as possible. The elements constituting the boundaries of the pitch were created by us manually in Blender. 
 
 ### Camera
 
@@ -67,7 +53,9 @@ Physical elements are calculated in two ways:
 
 After opening the page with the `?debug` parameter in the address, there are statistics of the display of frames per second, and a panel with physics settings, which can be changed during the game.
 
-[Game page - debug mode (with parameters and FPS counter)](https://benji-pooh.github.io/carballs/?debug)
+[Game page - debug mode with parameters and FPS counter](https://benji-pooh.github.io/carballs/?debug)
+
+Debug mode allows you to change just about anything.
 
 ## Game controls
 
