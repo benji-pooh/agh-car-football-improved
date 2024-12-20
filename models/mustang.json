@@ -24,7 +24,7 @@
 
     {
       "DbgIndex": 1,
-      "DbgName": "default",
+      "DbgName": "glass",
       "colorDiffuse": [0.8, 0.8, 0.8],
       "colorSpecular": [0.8, 0.8, 0.8],
       "opacity": 1.0,
@@ -44,7 +44,7 @@
 
     {
       "DbgIndex": 3,
-      "DbgName": "plastic",
+      "DbgName": "glass",
       "colorDiffuse": [0.8275, 0.8275, 0.8275],
       "colorSpecular": [0.5, 0.5, 0.5],
       "opacity": 1.0,
@@ -64,7 +64,7 @@
 
     {
       "DbgIndex": 5,
-      "DbgName": "rubber",
+      "DbgName": "glass",
       "colorDiffuse": [0.051, 0.051, 0.051],
       "colorSpecular": [0.5, 0.5, 0.5],
       "opacity": 1.0,
