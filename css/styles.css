@@ -6,8 +6,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Verdana;
-  font-size: 10pt;
+  font-family: Courier New;
+  font-size: 15pt;
   overflow: hidden;
 }
 
@@ -15,12 +15,12 @@ body {
   display:flex;
   align-items:center;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 12px;
   padding-bottom: 10px;
   position: absolute;
   top: 0;
-  width: 100%;
-  margin: 0;
+  width: 95%;
+  margin: 1;
   background-color: #c6c6c6;
 }
 
@@ -39,13 +39,13 @@ body {
 
 #controls_right {
   position: absolute;
-  bottom: 5px;
+  bottom: 7.5px;
   padding: 5px;
   left: 5px;
-  width: 250px;
-  background: rgba(230,233,255,0.8);
+  width: 265px;
+  background: rgba(179, 179, 181,0.75);
 }
 
 #controls_right > img {
-  width: 250px;
+  width: 265px;
 }
